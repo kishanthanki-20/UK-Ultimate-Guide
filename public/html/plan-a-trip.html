@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Plan A Trip</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/plan-a-trip.css" />
+	</head>
+	<body>
+		<h1 id="header"><a href = "../index.html" target = "_self">UK ULTIMATE GUIDE</a></h1>
+		<hr class="style13" />
+		<h1 id="title">Plan A Trip</h1>
+		<div id="form-paper">
+			<div id="survey-form">
+				<!--feeling-->
+				<div class="rowTab">
+					<div class="labels">
+						<label class="question" for="location">Where to?</label>
+					</div>
+					<div class="rightTab">
+						<select id="dropdown" class="dropdown-class" required>
+							<option value="scotland">Scotland</option>
+							<option value="london">London</option>
+							<option value="england">England</option>
+						</select>
+					</div>
+				</div>
+
+				<button id="skip_question" onClick="redirectSite()">Skip Questions</button>
+
+				<hr class="style14" />
+
+				<!--pet-->
+				<div class="rowTab">
+					<div class="labels">
+						<label class="question" for="pet">Question 1: How many days?</label>
+					</div>
+					<div class="rightTab"></div>
+				</div>
+
+				<br />
+				<div class="rowTab">
+					<div class="labels">
+						<label for="from-date">From: </label>
+					</div>
+					<div class="rightTab">
+						<input type="date" id="from-date" name="from-date" class="input-field" />
+					</div>
+				</div>
+
+				<div class="rowTab">
+					<div class="labels">
+						<label for="to-date">To: </label>
+					</div>
+					<div class="rightTab">
+						<input type="date" id="to-date" name="to-date" class="input-field" />
+					</div>
+				</div>
+
+				<div class="rowTab">
+					<div class="labels">
+						<label class="question" for="pet">Question 2: What is your budget?</label>
+					</div>
+					<div class="rightTab">
+						<input type="number" id="petName" name="petName" class="input-field" placeholder="&#163;" />
+					</div>
+				</div>
+				<br />
+				<div class="rowTab">
+					<div class="labels">
+						<label class="question" for="pet">Question 3: What type of holiday?</label>
+					</div>
+					<div class="rightTab">
+						<ul style="list-style: none">
+							<li class="radio">
+								<input id="beach" type="radio" name="holiday-type" value="beach" /><label for="beach">Beach</label>
+							</li>
+							<li class="radio">
+								<input id="luxary" type="radio" name="holiday-type" value="luxary" /><label for="luxary"
+									>Luxury</label
+								>
+							</li>
+							<li class="radio">
+								<input id="country-side" type="radio" name="holiday-type" value="country-side" /><label
+									for="country-side"
+									>Country Side</label
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!--aspects-->
+				<div class="rowTab">
+					<div class="labels">
+						<label class="question" for="interests">Question 4: What are your interests?</label>
+					</div>
+					<div class="rightTab">
+						<ul id="interests" style="list-style: none">
+							<li class="checkbox">
+								<label><input name="aspects" value="fur" type="checkbox" class="aspects" />Shopping</label>
+							</li>
+							<li class="checkbox">
+								<label><input name="aspects" value="maintenance" type="checkbox" class="aspects" />Drawing</label>
+							</li>
+							<li class="checkbox">
+								<label><input name="aspects" value="walkability" type="checkbox" class="aspects" />Reading</label>
+							</li>
+							<li class="checkbox">
+								<label><input name="aspects" value="supplies" type="checkbox" class="aspects" />Food</label>
+							</li>
+							<li class="checkbox">
+								<label><input name="aspects" value="cuddlability" type="checkbox" class="aspects" />Sports</label>
+							</li>
+							<li class="checkbox">
+								<label><input name="aspects" value="size" type="checkbox" class="aspects" />Photography</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!--influence-->
+				<br />
+				<div class="rowTab">
+					<div class="question">
+						<label for="influence">Anything else that you want to add?</label>
+					</div>
+					<div class="rightTab">
+						<textarea
+							id="influence"
+							name="influence"
+							class="input-field"
+							placeholder="Enter your comments here..."
+							rows="10"
+							cols="30"
+						></textarea>
+					</div>
+				</div>
+
+				<!--submit-->
+				<button id="submit" onClick="redirectSite()">Submit</button>
+			</form>
+		</div>
+	</body>
+	<script>
+		function redirectSite() {
+			var select = document.getElementById("dropdown");
+			var value = select.options[select.selectedIndex].value;
+			console.log(value);
+			if (value === "scotland") {
+				window.location.href = "./results_germany.html";
+			} else if (value === "london") {
+				window.location.href = "./results_london.html";
+			} else {
+				window.location.href = "./results_england.html";
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Results</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/sign-in.css" />
+	</head>
+	<body>
+		<h1 id="header"><a href = "../index.html" target = "_self">UK ULTIMATE GUIDE</a></h1>
+		<hr class="style13" />
+		<h1 id="title">Sign In</h1>
+		<div id="form-paper">
+			<form>
+				<div class="row">
+					<h2 style="text-align: center">Log in</h2>
+					<br />
+					<br />
+					<input type="email" id="email" placeholder="Email Address" required />
+					<input type="password" id="password" placeholder="Password" required />
+					<input id="submit_btn" type="button" value="Log in" /> 
+				</div>
+			</form>
+			<br />
+			<br />
+			<br />
+			<div class="bottom-container">
+				<div class="row">
+					<div class="col">
+						<a id="sign-up-btn" href="./sign-up.html" style="color: white" class="btn">Sign Up</a>
+					</div>
+					<div class="col">
+						<a id="forgot-pass-btn" href="#" style="color: white" class="btn">Forgot password?</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
+		import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-auth.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+
+		// Your web app's Firebase configuration
+		const firebaseConfig = {
+			apiKey: "AIzaSyDwVPsTdOEdO_vGbE9jEbuqNsRysmd9lpY",
+			authDomain: "uk-ultimate-guide.firebaseapp.com",
+			projectId: "uk-ultimate-guide",
+			storageBucket: "uk-ultimate-guide.appspot.com",
+			messagingSenderId: "165908402228",
+			appId: "1:165908402228:web:e8309861db9829f2c0ba61",
+		};
+
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+
+		const auth = getAuth(app);
+
+		submit_btn.addEventListener("click", (e) => {
+			login();
+		});
+
+		function login() {
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+
+			signInWithEmailAndPassword(auth, email, password)
+				.then((userCredential) => {
+					// Signed in
+					const user = userCredential.user;
+					// ...
+					location.replace("./plan-a-trip.html");
+					alert("Succesfull Logged in");
+
+				})
+				.catch((error) => {
+					const errorCode = error.code;
+					const errorMessage = error.message;
+					alert(errorMessage);
+				});
+		}
+	</script>
+</html>

@@ -1,0 +1,163 @@
+html,
+body {
+	background-color: #2ab189;
+	text-align: center;
+	font-family: "Comfortaa", cursive;
+	min-width: 320px;
+	margin: 0;
+}
+
+#header {
+	font-size: 3.5em;
+	font-weight: 900;
+	color: black;
+}
+
+hr.style13 {
+	height: 10px;
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px -10px rgb(203, 154, 154) inset;
+	width: 100%;
+}
+
+hr.style14 {
+	height: 10px;
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px -10px teal inset;
+	width: 75%;
+}
+
+.question {
+	font-weight: 600;
+	font-size: 18px;
+}
+
+#title {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 20px 30% 0px auto;
+	background-color: #114e60;
+	color: #fefefa;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	width: 180px;
+	padding: 10px;
+}
+
+#form-paper {
+	background-color: rgba(255, 255, 255, 0.7);
+	margin: 0 auto;
+	margin-bottom: 30px;
+	padding: 40px;
+	border-radius: 15px;
+	width: 75%;
+	max-width: 900px;
+}
+
+#skip_question {
+	background-color: #b52b59;
+	border-radius: 20px;
+	color: white;
+	font-size: 1em;
+	font-weight: 700;
+	height: 40px;
+	width: 150px;
+	padding: 2px;
+	margin-top: 15px;
+	margin-bottom: 30px;
+	border: 0px solid;
+}
+
+.labels {
+	display: inline-block;
+	text-align: right;
+	width: 38%;
+	font-size: 14;
+	padding: 5px;
+	vertical-align: top;
+	margin-top: 10px;
+}
+
+.rightTab {
+	display: inline-block;
+	text-align: left;
+	padding: 5px;
+	width: 48%;
+	vertical-align: middle;
+}
+
+.input-field {
+	height: 20px;
+	width: 90%;
+	padding: 5px;
+	margin: 10px;
+	border: 1px solid #c0c0c0;
+	border-radius: 2px;
+}
+
+.dropdown-class {
+	height: 35px;
+	width: 80%;
+	padding: 5px;
+	margin: 10px;
+	margin-top: 15px;
+	border: 1px solid #c0c0c0;
+	border-radius: 2px;
+}
+
+.radio,
+.checkbox {
+	position: relative;
+	left: -43px;
+	margin-left: 10px;
+	display: block;
+	padding-bottom: 10px;
+}
+
+textarea {
+	width: 90%;
+	margin-top: 100px;
+	height: 200px;
+}
+
+#submit {
+	background-color: #b52b59;
+	border-radius: 20px;
+	color: white;
+	font-size: 1em;
+	font-weight: 700;
+	height: 40px;
+	width: 96px;
+	padding: 2px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	border: 0px solid;
+}
+
+@media screen and (max-width: 833px) {
+	.input-field {
+		width: 80%;
+	}
+	select {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.labels {
+		width: 100%;
+		text-align: left;
+	}
+	.rightTab {
+		width: 80%;
+		float: left;
+	}
+	.input-field {
+		width: 100%;
+	}
+	select {
+		width: 100%;
+	}
+}

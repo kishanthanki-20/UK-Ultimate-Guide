@@ -1,0 +1,207 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: #2ab189;
+	text-align: center;
+	font-family: "Comfortaa", cursive;
+	min-width: 320px;
+	margin: 0;
+}
+
+#header {
+	font-size: 3.5em;
+	font-weight: 900;
+	color: black;
+}
+
+hr.style13 {
+	height: 10px;
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px -10px rgb(203, 154, 154) inset;
+	width: 100%;
+}
+
+#title {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 20px 30% 0px auto;
+	background-color: #114e60;
+	color: #fefefa;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	width: 180px;
+	padding: 10px;
+}
+
+#form-paper {
+	background-color: rgba(255, 255, 255, 0.7);
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 40px;
+	padding-bottom: 10px;
+	border-radius: 15px;
+	width: 45%;
+	max-width: 1800px;
+}
+
+/* style the container */
+.container {
+	position: relative;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px 0 30px 0;
+}
+
+/* style inputs and link buttons */
+input,
+.btn {
+	width: 100%;
+	padding: 12px;
+	border: none;
+	border-radius: 4px;
+	margin: 5px 0;
+	opacity: 0.85;
+	display: inline-block;
+	font-size: 17px;
+	line-height: 20px;
+	text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+	opacity: 1;
+}
+
+#align {
+	position: relative;
+	transform: translateY(25px);
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+	background-color: #3b5998;
+	color: white;
+}
+
+.twitter {
+	background-color: #55acee;
+	color: white;
+}
+
+.google {
+	background-color: #dd4b39;
+	color: white;
+}
+
+/* style the submit button */
+#submit_btn {
+	background-color: #04aa6d;
+	color: white;
+	cursor: pointer;
+}
+
+#submit_btn:hover {
+	background-color: #45a049;
+}
+
+/* Two-column layout */
+.col {
+	float: left;
+	width: 50%;
+	margin: auto;
+	padding: 0 50px;
+	margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* vertical line */
+.vl {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	border: 2px solid black;
+	width: 2px;
+	background-color: black;
+	height: 175px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+	display: none;
+}
+
+/* bottom container */
+.bottom-container {
+	text-align: center;
+	background-color: #666;
+	margin-bottom: 40px;
+	border-radius: 0px 0px 4px 4px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+	.col {
+		width: 100%;
+		margin-top: 0;
+	}
+	/* hide the vertical line */
+	.vl {
+		display: none;
+	}
+	/* show the hidden text on small screens */
+	.hide-md-lg {
+		display: block;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 1420px) {
+	#form-paper {
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 671px) {
+	.col {
+		width: 100%;
+		margin-top: 0;
+	}
+
+	#title {
+		margin: 20px 30% 0px auto;
+	}
+
+	.google {
+		background-color: #dd4b39;
+		color: white;
+		margin-bottom: 50px;
+	}
+
+	.vl {
+		display: none;
+	}
+
+	.twitter {
+		background-color: #55acee;
+		color: white;
+	}
+
+	.hide-md-lg {
+		display: block;
+		text-align: center;
+	}
+
+	#form-paper {
+		width: 90%;
+	}
+}

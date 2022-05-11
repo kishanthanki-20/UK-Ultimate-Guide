@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Results</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+
+		<link rel="stylesheet" href="../css/results.css" />
+	</head>
+	<body>
+		<h1 id="header"><a href="../index.html" target="_self">UK ULTIMATE GUIDE</a></h1>
+		<hr class="style13" />
+		<h1 id="title">Results</h1>
+		<div id="form-paper">
+			<div class="container">
+				<div class="list">
+					<a href="https://londonpostcodewalks.files.wordpress.com/2013/09/img_3344.jpg"
+						><img
+							src="https://londonpostcodewalks.files.wordpress.com/2013/09/img_3344.jpg"
+							alt="WWT London Wetland Centre-map-img"
+					/></a>
+					<img
+						src="https://www.overseasattractions.com/wp-content/uploads/2016/10/WWT-London-Wetland-Centre.jpg?ezimgfmt=ng:webp/ngcb17"
+						alt="WWT London Wetland Centre-img"
+					/>
+					<div class="content">
+						<h1>WWT London Wetland Centre</h1>
+						<p>
+							Voted in 2012 as Britain’s Favourite Natural Reserve, WWT London Wetland Centre is an oasis of natural
+							wildlife placed right in the heart of London. Managed by Wildfowl and Wetlands Trust, this idyllic
+							wetland reserve is located in a loop of the Thames and occupies more than 100 acres of land.
+						</p>
+					</div>
+					<button id="book-now" class="book-now">Book Now</button>
+				</div>
+				<div class="list">
+					<a href="https://storage.googleapis.com/support-forums-api/attachment/thread-12995880-4144155970824794028.JPG">
+						<img
+							src="https://storage.googleapis.com/support-forums-api/attachment/thread-12995880-4144155970824794028.JPG   "
+							alt="green-park-map-img"
+						/>
+					</a>
+
+					<img
+						src="https://www.overseasattractions.com/wp-content/uploads/2016/10/Green-Park.jpg?ezimgfmt=ng:webp/ngcb17"
+						alt="Green-Park-img"
+					/>
+					<div class="content">
+						<h1>The Green Park</h1>
+						<p>
+							Located in central London, the area known as Green Park makes the connection between Hyde Park and St.
+							James’s Park. Being part of the Royal Parks of London, the Green Park is the only park that is not
+							interruped by man-made buildings or other modern inventions.
+						</p>
+					</div>
+					<button id="book-now" class="book-now">Book Now</button>
+				</div>
+				<div class="list">
+					<a href="https://cdn.pacer.cc/route/screenshot/gcpvj1_12.png">
+						<img src="https://cdn.pacer.cc/route/screenshot/gcpvj1_12.png" alt="St. James’s Park-map" />
+					</a>
+					<img
+						src="https://www.overseasattractions.com/wp-content/uploads/2016/10/St.-Jamess-Park.jpg?ezimgfmt=ng:webp/ngcb17"
+						alt="St. James’s Park-img"
+					/>
+					<div class="content">
+						<h1>St. James’s Park</h1>
+						<p>
+							Originally purchased by Henry III, the park was completely transformed by James I, who wanted it full of
+							exotic animals and birds. Since then, the aspect of St. James’s Park suffered further modifications, but
+							it continues to be a significant part of London’s identity.
+						</p>
+					</div>
+					<button id="book-now" class="book-now">Book Now</button>
+				</div>
+			</div>
+		</div>
+
+		<script type="module">
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
+			import {
+				getAuth,
+				signInWithEmailAndPassword,
+				onAuthStateChanged,
+			} from "https://www.gstatic.com/firebasejs/9.8.0/firebase-auth.js";
+			// TODO: Add SDKs for Firebase products that you want to use
+			// https://firebase.google.com/docs/web/setup#available-libraries
+
+			// Your web app's Firebase configuration
+			const firebaseConfig = {
+				apiKey: "AIzaSyDwVPsTdOEdO_vGbE9jEbuqNsRysmd9lpY",
+				authDomain: "uk-ultimate-guide.firebaseapp.com",
+				projectId: "uk-ultimate-guide",
+				storageBucket: "uk-ultimate-guide.appspot.com",
+				messagingSenderId: "165908402228",
+				appId: "1:165908402228:web:e8309861db9829f2c0ba61",
+			};
+
+			// Initialize Firebase
+			const app = initializeApp(firebaseConfig);
+
+			const auth = getAuth(app);
+
+			var booknowbtn = document.getElementsByClassName("book-now");
+
+			for (var i = 0; i < booknowbtn.length; i++) {
+				booknowbtn[i].addEventListener("click", (e) => {
+					onAuthStateChanged(auth, (user) => {
+						if (user) {
+							const isAn = user.isAnonymous;
+							if (isAn) {
+								alert("Please login to book");
+							} else {
+								alert("Successfully Booked");
+							}
+						}
+					});
+				});
+			}
+		</script>
+	</body>
+</html>

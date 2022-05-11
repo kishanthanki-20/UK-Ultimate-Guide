@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Results</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet" />
+
+		<link rel="stylesheet" href="../css/results.css" />
+	</head>
+	<body>
+		<h1 id="header"><a href="../index.html" target="_self">UK ULTIMATE GUIDE</a></h1>
+		<hr class="style13" />
+		<h1 id="title">Results</h1>
+		<div id="form-paper">
+			<div class="container">
+				<div class="list">
+					<a
+						href="https://1.bp.blogspot.com/-vXzvb83w43A/X7Keg0S7qiI/AAAAAAAAJBE/NB8jD4pI1J0RovWb9x6-DYgivDrGaT22ACLcBGAsYHQ/s2048/malham-cove-walk-map-route.jpg"
+					>
+						<img
+							src="https://1.bp.blogspot.com/-vXzvb83w43A/X7Keg0S7qiI/AAAAAAAAJBE/NB8jD4pI1J0RovWb9x6-DYgivDrGaT22ACLcBGAsYHQ/s2048/malham-cove-walk-map-route.jpg"
+							alt="Malham Cove-map-img"
+						/>
+					</a>
+					<img
+						src="https://img.theculturetrip.com/768x/smart/wp-content/uploads/2018/03/gettyimages-590670945.jpg"
+						alt="Malham Cove-img"
+					/>
+					<div class="content">
+						<h1>Malham Cove</h1>
+						<p>
+							This limestone formation, just outside the village of Malham in North Yorkshire, was formed thousands of
+							years ago by a waterfall created at the end of the Ice Age. Surrounded by beautiful countryside, the
+							sheer rock face and distinctive limestone pavement might look familiar as they featured in Harry Potter
+							and the Deathly Hallows (Part 1).
+						</p>
+					</div>
+					<button id="book-now" class="book-now">Book Now</button>
+				</div>
+				<div class="list">
+					<a href="https://www.kevmrc.com/wp-content/uploads/2018/08/durdle-door-map-to-lulworth-cove-hike.jpg">
+						<img
+							src="https://www.kevmrc.com/wp-content/uploads/2018/08/durdle-door-map-to-lulworth-cove-hike.jpg"
+							alt="Durdle Door-map-img"
+						/>
+					</a>
+					<img
+						src="https://img.theculturetrip.com/768x/smart/wp-content/uploads/2019/12/gettyimages-587483414.jpg"
+						alt="Durdle Door-img"
+					/>
+					<div class="content">
+						<h1>Durdle Door</h1>
+						<p>
+							This world-famous geological wonder with its giant rock arch can be found on Dorset’s breathtaking
+							Jurassic Coast. Durdle Door has a picturesque beach perfect for relaxing with a picnic or even swimming,
+							if you’re feeling brave.
+						</p>
+					</div>
+					<button id="book-now" class="book-now">Book Now</button>
+				</div>
+				<div class="list">
+					<a href="https://i.pinimg.com/originals/3a/43/04/3a4304120600ac1ebdb35b28ce22fc01.jpg">
+						<img
+							src="https://i.pinimg.com/originals/3a/43/04/3a4304120600ac1ebdb35b28ce22fc01.jpg"
+							alt="Cheddar Gorge-map-img"
+						/>
+					</a>
+					<img
+						src="https://img.theculturetrip.com/768x/smart/wp-content/uploads/2019/12/dj775n.jpg"
+						alt="Cheddar Gorge-img"
+					/>
+					<div class="content">
+						<h1>Cheddar Gorge</h1>
+						<p>
+							With dramatic cliffs reaching a height of 450ft, this Somerset spot is the biggest gorge in the UK.
+							Climb to the top of Cheddar Gorge for jaw-dropping views across the South West of the country, or head
+							underground and explore the spectacular Gough’s Cave.
+						</p>
+					</div>
+
+					<button id="book-now" class="book-now">Book Now</button>
+				</div>
+			</div>
+		</div>
+
+		<script type="module">
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
+			import {
+				getAuth,
+				signInWithEmailAndPassword,
+				onAuthStateChanged,
+			} from "https://www.gstatic.com/firebasejs/9.8.0/firebase-auth.js";
+			// TODO: Add SDKs for Firebase products that you want to use
+			// https://firebase.google.com/docs/web/setup#available-libraries
+
+			// Your web app's Firebase configuration
+			const firebaseConfig = {
+				apiKey: "AIzaSyDwVPsTdOEdO_vGbE9jEbuqNsRysmd9lpY",
+				authDomain: "uk-ultimate-guide.firebaseapp.com",
+				projectId: "uk-ultimate-guide",
+				storageBucket: "uk-ultimate-guide.appspot.com",
+				messagingSenderId: "165908402228",
+				appId: "1:165908402228:web:e8309861db9829f2c0ba61",
+			};
+
+			// Initialize Firebase
+			const app = initializeApp(firebaseConfig);
+
+			const auth = getAuth(app);
+
+			var booknowbtn = document.getElementsByClassName("book-now");
+
+			for (var i = 0; i < booknowbtn.length; i++) {
+				booknowbtn[i].addEventListener("click", (e) => {
+					onAuthStateChanged(auth, (user) => {
+						if (user) {
+							const isAn = user.isAnonymous;
+							if (isAn) {
+								alert("Please login to book");
+							} else {
+								alert("Successfully Booked");
+							}
+						}
+					});
+				});
+			}
+		</script>
+	</body>
+</html>

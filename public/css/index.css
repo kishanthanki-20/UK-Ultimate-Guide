@@ -1,0 +1,83 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: #2ab189;
+	text-align: center;
+	font-family: "Comfortaa", cursive;
+	min-width: 320px;
+	margin: 0;
+}
+
+.title-head {
+	text-align: center;
+}
+
+#header {
+	font-size: 3.5em;
+	font-weight: 900;
+	color: black;
+}
+
+.btn {
+	background-color: #b52b59;
+	border-radius: 20px;
+	color: white;
+	font-size: 1em;
+	font-weight: 700;
+	height: 45px;
+	width: 180px;
+	padding: 4px;
+	margin-top: 15px;
+	margin-bottom: 30px;
+	border: 0px solid;
+}
+
+hr.style13 {
+	height: 10px;
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px -10px rgb(203, 154, 154) inset;
+	width: 100%;
+}
+
+#title {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 20px 40% 0px auto;
+	background-color: #114e60;
+	color: #fefefa;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	width: 180px;
+	padding: 10px;
+}
+
+#form-paper {
+	background-color: rgba(255, 255, 255, 0.7);
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 40px;
+	padding-bottom: 10px;
+	border-radius: 15px;
+	width: 40%;
+	max-width: 1800px;
+}
+
+@media screen and (max-width: 1420px) {
+	#form-paper {
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 671px) {
+	#title {
+		margin: 20px 30% 0px auto;
+	}
+
+	#form-paper {
+		width: 90%;
+	}
+}
